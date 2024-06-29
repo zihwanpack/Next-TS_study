@@ -1,0 +1,24 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.slide-container {
+  padding: 20px;
+  height: 30%;
+  margin-top: 10%;
+}
+
+.slide {
+  display: flex;
+}
+.movie {
+  list-style-type: none;
+}
+.movie-image {
+  height: 200px;
+  width: 250px;
+  padding: 20px;
+}

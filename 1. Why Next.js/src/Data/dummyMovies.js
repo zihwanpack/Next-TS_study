@@ -1,5 +1,6 @@
 const dummyMovies = [
   {
+    id: 'a9f5b3e2',
     title: '듄2',
     // 특정 콘텐츠를 식별하고 URL을 구성하기 위해 사용되는 짧고 고유한 문자열을 말한다.
     slug: 'dune-2',
@@ -23,6 +24,7 @@ const dummyMovies = [
     creator_email: 'jihwan8807@naver.com',
   },
   {
+    id: 'b3d1c8a7',
     title: '아바타: 물의 길',
     slug: 'Avatar-The-Way-of-Water',
     image: '/images/Avatar-The-Way-of-Water.webp',
@@ -44,6 +46,7 @@ const dummyMovies = [
     creator_email: 'jihwan8807@naver.com',
   },
   {
+    id: 'f7e2d6b1',
     title: '가여운 것들',
     slug: 'Poor-Things',
     image: '/images/Poor-Things.webp',
@@ -66,6 +69,7 @@ const dummyMovies = [
     creator_email: 'jihwan8807@naver.com',
   },
   {
+    id: 'c4e3a9d2',
     title: '올드보이',
     slug: 'Oldboy',
     image: '/images/Oldboy.webp',
@@ -88,6 +92,7 @@ const dummyMovies = [
     creator_email: 'jihwan8807@naver.com',
   },
   {
+    id: 'd1b2e3f4',
     title: '기생충',
     slug: 'Parasite',
     image: '/images/Parasite.webp',
@@ -110,6 +115,7 @@ const dummyMovies = [
     creator_email: 'jihwan8807@naver.com',
   },
   {
+    id: 'e6a4f7c1',
     title: '반지의 제왕: 왕의 귀환',
     slug: 'The-Lord-of-the-Rings-The-Return-of-the-King',
     image: '/images/The-Lord-of-the-Rings-The-Return-of-the-King.webp',
@@ -132,6 +138,7 @@ const dummyMovies = [
     creator_email: 'jihwan8807@naver.com',
   },
   {
+    id: 'b2d4e1f3',
     title: '인터스텔라',
     slug: 'Interstellar',
     image: '/images/Interstellar.webp',
@@ -154,6 +161,7 @@ const dummyMovies = [
     creator_email: 'jihwan8807@naver.com',
   },
   {
+    id: 'f3c1a9b5',
     title: '오펜하이머',
     slug: 'Oppenheimer',
     image: '/images/Oppenheimer.webp',
@@ -177,4 +185,4 @@ const dummyMovies = [
   },
 ];
 
-export { dummyMovies };
+export default dummyMovies;

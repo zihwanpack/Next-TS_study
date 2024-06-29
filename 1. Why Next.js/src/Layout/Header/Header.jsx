@@ -4,11 +4,13 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.contents}>
-        <img
-          src="/images/WATCHA_Logo_Main.svg"
-          alt="왓챠 로고"
-          className={styles.image}
-        />
+        <Link to="/">
+          <img
+            src="/images/WATCHA_Logo_Main.svg"
+            alt="왓챠 로고"
+            className={styles.image}
+          />
+        </Link>
         <nav className={styles.navigation}>
           <ul>
             <li>

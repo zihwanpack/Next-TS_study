@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './MainNav.module.css';
 const MainNav = () => {
-  console.log(styles);
   return (
     <nav className={styles['navigation-bar']}>
       <Link to="/post" className={styles['link-box']}>
