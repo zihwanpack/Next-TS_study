@@ -1,9 +1,11 @@
-export const dummyMovies = [
+const dummyMovies = [
   {
-    title: '뷰티인사이드',
-    slug: 'beauty-inside',
-    image: '/images/movie1.jpg',
-    summary: '뷰티 인사이드는 멋있는 영화다',
+    title: '듄2.',
+    // 특정 콘텐츠를 식별하고 URL을 구성하기 위해 사용되는 짧고 고유한 문자열을 말한다.
+    slug: 'dune-2',
+    image: '/images/Dune-2.webp',
+    summary:
+      '2024년 2월 28일에 개봉한 드니 빌뇌브 감독의 듄 시리즈 실사영화. 2021년 영화 〈듄〉의 속편이다.',
     instructions: `
             1. 영화 감상 준비:
                 편안한 의자에 앉아 팝콘과 음료를 준비합니다. 휴대폰은 무음으로 설정합니다.
@@ -17,14 +19,14 @@ export const dummyMovies = [
             4. 리뷰 작성:
                 영화를 본 소감을 기록하거나 온라인에 리뷰를 작성합니다. 배우들의 연기와 줄거리를 평가합니다.
         `,
-    creator: '김용민',
-    creator_email: 'dydals3440@gmail.com',
+    creator: '드니 빌뇌브',
+    creator_email: 'jihwan8807@naver.com',
   },
   {
-    title: '악마를 보았다.',
-    slug: 'beauty-inside',
-    image: '/images/movie1.jpg',
-    summary: '뷰티 인사이드는 멋있는 영화다',
+    title: '아바타: 물의 길',
+    slug: 'Avatar-The-Way-of-Water',
+    image: '/images/Avatar-The-Way-of-Water.webp',
+    summary: '아바타 시리즈의 두 번째 영화',
     instructions: `
             1. 영화 감상 준비:
                 편안한 의자에 앉아 팝콘과 음료를 준비합니다. 휴대폰은 무음으로 설정합니다.
@@ -38,7 +40,141 @@ export const dummyMovies = [
             4. 리뷰 작성:
                 영화를 본 소감을 기록하거나 온라인에 리뷰를 작성합니다. 배우들의 연기와 줄거리를 평가합니다.
         `,
-    creator: '김용민',
-    creator_email: 'dydals3440@gmail.com',
+    creator: '제임스 카메론',
+    creator_email: 'jihwan8807@naver.com',
+  },
+  {
+    title: '가여운 것들',
+    slug: 'Poor-Things',
+    image: '/images/Poor-Things.webp',
+    summary:
+      '요르고스 란티모스 감독의 여덟 번째 장편영화. 스코틀랜드 작가 앨러스데어 그레이의 동명 소설을 원작으로 한다.',
+    instructions: `
+            1. 영화 감상 준비:
+                편안한 의자에 앉아 팝콘과 음료를 준비합니다. 휴대폰은 무음으로 설정합니다.
+
+            2. 영화 감상:
+                화면에 집중하며, 주인공의 다양한 모습에 주목합니다. 감정 변화를 느껴봅니다.
+
+            3. 토론하기:
+                영화가 끝난 후, 친구나 가족과 영화의 주제와 감동적인 장면에 대해 이야기합니다.
+
+            4. 리뷰 작성:
+                영화를 본 소감을 기록하거나 온라인에 리뷰를 작성합니다. 배우들의 연기와 줄거리를 평가합니다.
+        `,
+    creator: '요르고스 란티모스',
+    creator_email: 'jihwan8807@naver.com',
+  },
+  {
+    title: '올드보이',
+    slug: 'Oldboy',
+    image: '/images/Oldboy.webp',
+    summary:
+      '동명의 만화를 원안으로 한 박찬욱 감독, 최민식, 유지태, 강혜정 주연의 스릴러 느와르 영화.',
+    instructions: `
+            1. 영화 감상 준비:
+                편안한 의자에 앉아 팝콘과 음료를 준비합니다. 휴대폰은 무음으로 설정합니다.
+
+            2. 영화 감상:
+                화면에 집중하며, 주인공의 다양한 모습에 주목합니다. 감정 변화를 느껴봅니다.
+
+            3. 토론하기:
+                영화가 끝난 후, 친구나 가족과 영화의 주제와 감동적인 장면에 대해 이야기합니다.
+
+            4. 리뷰 작성:
+                영화를 본 소감을 기록하거나 온라인에 리뷰를 작성합니다. 배우들의 연기와 줄거리를 평가합니다.
+        `,
+    creator: '박찬욱',
+    creator_email: 'jihwan8807@naver.com',
+  },
+  {
+    title: '기생충',
+    slug: 'Parasite',
+    image: '/images/Parasite.webp',
+    summary:
+      '2019년에 개봉한 봉준호 감독의 7번째 장편 영화. 상류층과 하류층, 두 가족의 만남을 다룬 대한민국의 사회고발물 성향의 블랙 코미디, 가족, 드라마 영화이다.',
+    instructions: `
+            1. 영화 감상 준비:
+                편안한 의자에 앉아 팝콘과 음료를 준비합니다. 휴대폰은 무음으로 설정합니다.
+
+            2. 영화 감상:
+                화면에 집중하며, 주인공의 다양한 모습에 주목합니다. 감정 변화를 느껴봅니다.
+
+            3. 토론하기:
+                영화가 끝난 후, 친구나 가족과 영화의 주제와 감동적인 장면에 대해 이야기합니다.
+
+            4. 리뷰 작성:
+                영화를 본 소감을 기록하거나 온라인에 리뷰를 작성합니다. 배우들의 연기와 줄거리를 평가합니다.
+        `,
+    creator: '봉준호',
+    creator_email: 'jihwan8807@naver.com',
+  },
+  {
+    title: '반지의 제왕: 왕의 귀환',
+    slug: 'The-Lord-of-the-Rings-The-Return-of-the-King',
+    image: '/images/The-Lord-of-the-Rings-The-Return-of-the-King.webp',
+    summary:
+      '피터 잭슨이 연출을 맡은 반지의 제왕 실사영화 시리즈의 3번째 영화이자 사우론을 무너뜨리기 위한 프로도의 여정의 막바지를 다룬다.',
+    instructions: `
+            1. 영화 감상 준비:
+                편안한 의자에 앉아 팝콘과 음료를 준비합니다. 휴대폰은 무음으로 설정합니다.
+
+            2. 영화 감상:
+                화면에 집중하며, 주인공의 다양한 모습에 주목합니다. 감정 변화를 느껴봅니다.
+
+            3. 토론하기:
+                영화가 끝난 후, 친구나 가족과 영화의 주제와 감동적인 장면에 대해 이야기합니다.
+
+            4. 리뷰 작성:
+                영화를 본 소감을 기록하거나 온라인에 리뷰를 작성합니다. 배우들의 연기와 줄거리를 평가합니다.
+        `,
+    creator: '피터 잭슨',
+    creator_email: 'jihwan8807@naver.com',
+  },
+  {
+    title: '인터스텔라',
+    slug: 'Interstellar',
+    image: '/images/Interstellar.webp',
+    summary:
+      '2014년에 개봉한 미국 영화. 제목인 인터스텔라(Interstellar)는 ~의 중간의, 사이의를 뜻하는 접두사 inter-와 별의를 뜻하는 stellar의 합성어로, "항성 간의, 성간의"라는 의미를 가진다.',
+    instructions: `
+            1. 영화 감상 준비:
+                편안한 의자에 앉아 팝콘과 음료를 준비합니다. 휴대폰은 무음으로 설정합니다.
+
+            2. 영화 감상:
+                화면에 집중하며, 주인공의 다양한 모습에 주목합니다. 감정 변화를 느껴봅니다.
+
+            3. 토론하기:
+                영화가 끝난 후, 친구나 가족과 영화의 주제와 감동적인 장면에 대해 이야기합니다.
+
+            4. 리뷰 작성:
+                영화를 본 소감을 기록하거나 온라인에 리뷰를 작성합니다. 배우들의 연기와 줄거리를 평가합니다.
+        `,
+    creator: '크리스토퍼 놀란',
+    creator_email: 'jihwan8807@naver.com',
+  },
+  {
+    title: '오펜하이머',
+    slug: 'Oppenheimer',
+    image: '/images/Oppenheimer.webp',
+    summary:
+      '크리스토퍼 놀란 감독의 열두 번째 장편 영화로, 줄리어스 로버트 오펜하이머가 미국의 핵개발 프로젝트인 맨해튼 계획에 참여하여 원자폭탄을 개발한 역사에 대한 미국의 전기 영화다.',
+    instructions: `
+            1. 영화 감상 준비:
+                편안한 의자에 앉아 팝콘과 음료를 준비합니다. 휴대폰은 무음으로 설정합니다.
+
+            2. 영화 감상:
+                화면에 집중하며, 주인공의 다양한 모습에 주목합니다. 감정 변화를 느껴봅니다.
+
+            3. 토론하기:
+                영화가 끝난 후, 친구나 가족과 영화의 주제와 감동적인 장면에 대해 이야기합니다.
+
+            4. 리뷰 작성:
+                영화를 본 소감을 기록하거나 온라인에 리뷰를 작성합니다. 배우들의 연기와 줄거리를 평가합니다.
+        `,
+    creator: '크리스토퍼 놀란',
+    creator_email: 'jihwan8807@naver.com',
   },
 ];
+
+export { dummyMovies };

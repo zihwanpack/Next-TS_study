@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { MainPage } from '../Pages/Main/MainPage';
-import { Layout } from '../Layout/Layout';
+import { Layout } from '../layout/Layout';
 
 const router = createBrowserRouter([
   {
@@ -8,6 +8,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
+        // 기본페이지 정할 때 이렇게 지정함
         path: '',
         element: <MainPage />,
       },
