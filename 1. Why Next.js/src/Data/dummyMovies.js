@@ -1,6 +1,6 @@
 const dummyMovies = [
   {
-    title: '듄2.',
+    title: '듄2',
     // 특정 콘텐츠를 식별하고 URL을 구성하기 위해 사용되는 짧고 고유한 문자열을 말한다.
     slug: 'dune-2',
     image: '/images/Dune-2.webp',
