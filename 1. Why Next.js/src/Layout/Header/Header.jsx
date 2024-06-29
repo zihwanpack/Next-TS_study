@@ -5,7 +5,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.contents}>
         <img
-          src="/public/images/WATCHA_Logo_Main.svg"
+          src="/images/WATCHA_Logo_Main.svg"
           alt="왓챠 로고"
           className={styles.image}
         />
@@ -36,4 +36,4 @@ const Header = () => {
     </header>
   );
 };
-export { Header };
+export default Header;

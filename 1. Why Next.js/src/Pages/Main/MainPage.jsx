@@ -1,4 +1,12 @@
+import MainContainer from '../../components/MainContainer/MainContainer';
+import MainNav from '../../components/MainNav/MainNav';
 const MainPage = () => {
-  return <div>123</div>;
+  return (
+    <>
+      <MainContainer>
+        <MainNav />
+      </MainContainer>
+    </>
+  );
 };
-export { MainPage };
+export default MainPage;
