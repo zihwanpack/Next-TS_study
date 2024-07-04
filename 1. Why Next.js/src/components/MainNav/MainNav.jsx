@@ -6,9 +6,10 @@ const MainNav = () => {
       <Link to="/post" className={styles['link-box']}>
         <img
           src="/images/WATCHA_Logo_SideBar.svg"
-          alt="내가 직접 수정한 svg 왓챠 이미지"
+          alt="내가 직접 수정한 svg 왓챠 아이콘"
+          className={styles.icon}
         />
-        <p className={styles.link}>최애 영화를 공유해주세요!</p>
+        <p className={styles.link}>추천해줘!</p>
       </Link>
     </nav>
   );

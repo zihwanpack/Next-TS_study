@@ -1,24 +1,44 @@
 .container {
   height: 100%;
-  width: 100%;
+  max-width: 85%;
   background-color: black;
   color: white;
 }
 
-.slide-container {
-  padding: 20px;
-  height: 30%;
+.carousel-main {
+  padding: 0 20px;
   margin-top: 10%;
 }
 
-.slide {
+.carousel-name {
+  /* 상 우 하 좌 */
+  margin: 0px 0px 20px 90px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.wrapper {
   display: flex;
 }
-.movie {
+
+.wrapper:hover > button {
+  visibility: visible;
+}
+.carousel {
+  display: flex;
   list-style-type: none;
 }
-.movie-image {
-  height: 200px;
-  width: 250px;
-  padding: 20px;
+.carousel-image {
+  height: 500px;
+  width: 400px;
+  margin: 0 10px;
+  object-fit: contain;
+}
+
+.carousel-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  visibility: hidden;
 }
