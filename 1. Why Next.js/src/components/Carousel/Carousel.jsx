@@ -8,15 +8,17 @@ import { useState } from 'react';
 const Carousel = () => {
   const [index, setIndex] = useState(0);
   const moviesToShow = 4;
+  const howMuchMove = 4;
 
   const handlePrevButton = () => {
     setIndex(
-      (prevIndex) => (prevIndex - 4 + dummyMovies.length) % dummyMovies.length
+      (prevIndex) =>
+        (prevIndex - howMuchMove + dummyMovies.length) % dummyMovies.length
     );
   };
 
   const handleFowardButton = () => {
-    setIndex((prevIndex) => (prevIndex + 4) % dummyMovies.length);
+    setIndex((prevIndex) => (prevIndex + howMuchMove) % dummyMovies.length);
   };
 
   const getVisibleMovies = () => {

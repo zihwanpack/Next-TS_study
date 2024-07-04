@@ -1,6 +1,7 @@
 import Container from '../../components/Container/Container';
 import SideNav from '../../components/SideNav/SideNav';
 import MovieList from '../../components/MovieList/MovieList';
+
 const MainPage = () => {
   return (
     <>
