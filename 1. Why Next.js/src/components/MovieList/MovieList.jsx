@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import styles from './MovieList.module.css';
 import dummyMovies from '../../data/dummyMovies';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 
 const MovieList = () => {
-  const { slug } = useParams();
   const [index, setIndex] = useState(0);
   const moviesToShow = 4;
 
@@ -44,7 +43,7 @@ const MovieList = () => {
             const { id, image, title } = dummyMovie;
             return (
               <li key={id} className={styles.carousel}>
-                <Link to={`/movies/:${slug}`}>
+                <Link to={`/contents/${id}`}>
                   <img
                     src={image}
                     alt={`${title}의 포스터`}
