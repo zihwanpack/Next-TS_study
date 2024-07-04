@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import styles from './MainNav.module.css';
-const MainNav = () => {
+import styles from './SideNav.module.css';
+const SideNav = () => {
   return (
     <nav className={styles['navigation-bar']}>
       <Link to="/post" className={styles['link-box']}>
@@ -15,4 +15,4 @@ const MainNav = () => {
   );
 };
 
-export default MainNav;
+export default SideNav;
