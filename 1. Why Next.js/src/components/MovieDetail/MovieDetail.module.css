@@ -6,43 +6,6 @@
   padding: 40px;
 }
 
-.movie-detail-article {
-  display: flex;
-  justify-content: space-between;
-}
-
-.description-box {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.movie-detail-title {
-  font-size: 4rem;
-}
-.movie-detail-creator {
-  font-size: 1.5rem;
-  color: rgb(210, 210, 210);
-  display: flex;
-  gap: 20px;
-}
-
-.summary-box {
-  width: 80%;
-}
-
-.movie-detail-summary {
-  font-size: 1.5rem;
-  color: rgb(210, 210, 210);
-  word-break: keep-all;
-}
-
-.movie-detail-image {
-  object-fit: contain;
-  height: 500px;
-  width: 400px;
-}
-
 .movie-detail-instructions {
   font-size: 1.3rem;
   white-space: pre-line;
