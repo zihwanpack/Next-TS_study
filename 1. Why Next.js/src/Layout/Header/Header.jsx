@@ -15,7 +15,7 @@ const Header = () => {
           <ul>
             <li>
               <Link
-                to="/home"
+                to="/"
                 // 객체 접근시 - 때문에 Bracket Notation으로 접근한다.
                 className={`${styles.link} ${styles['pink-button']}`}
               >
@@ -23,7 +23,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/movies" className={styles.link}>
+              <Link to="/" className={styles.link}>
                 Movies
               </Link>
             </li>

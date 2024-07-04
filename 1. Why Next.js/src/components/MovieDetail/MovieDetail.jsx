@@ -16,7 +16,7 @@ const MovieDetail = () => {
         summary={summary}
         image={image}
       />
-      <section className={styles['instructions-box']}>
+      <section>
         <p className={styles['movie-detail-instructions']}>{instructions}</p>
       </section>
     </div>
