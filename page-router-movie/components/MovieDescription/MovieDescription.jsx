@@ -1,4 +1,5 @@
 import styles from './MovieDescription.module.css';
+import Image from 'next/image';
 const MovieDescription = ({
   title,
   creator,
@@ -18,10 +19,12 @@ const MovieDescription = ({
           <p className={styles['movie-detail-summary']}>{summary}</p>
         </div>
       </div>
-      <img
+      <Image
         src={image}
         alt={`${title}의 이미지`}
         className={styles['movie-detail-image']}
+        height={500}
+        width={400}
       />
     </article>
   );

@@ -12,6 +12,7 @@ const Header = () => {
             width={200}
             height={200}
             className={styles.image}
+            priority={true}
           />
         </Link>
         <nav className={styles.navigation}>

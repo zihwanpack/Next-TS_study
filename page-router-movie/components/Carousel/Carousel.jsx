@@ -40,11 +40,11 @@ const Carousel = ({ movieData }) => {
         >
           <MdArrowBackIos size="60" color="#ffffff" />
         </button>
-        {getVisibleMovies().map((dummyMovie) => {
-          const { id, image, title } = dummyMovie;
+        {getVisibleMovies().map((movieData) => {
+          const { id, image, title } = movieData;
           return (
             <li key={id} className={styles.carousel}>
-              <Link href={`/contents/${id}`}>
+              <Link href={`/products/${id}`}>
                 <Image
                   src={image}
                   alt={`${title}의 포스터`}

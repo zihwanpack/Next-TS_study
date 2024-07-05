@@ -8,4 +8,8 @@ function fetchMovies() {
   return instance.get('/products');
 }
 
-export { fetchMovies };
+function fetchMovieId(productId) {
+  return instance.get(`/products/${productId}`);
+}
+
+export { fetchMovies, fetchMovieId };

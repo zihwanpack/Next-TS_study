@@ -1,11 +1,10 @@
-import { useParams } from 'react-router-dom';
-import dummyMovies from '../../data/dummyMovies';
 import styles from './MovieDetail.module.css';
 import MovieDescription from '../MovieDescription/MovieDescription';
-const MovieDetail = () => {
-  const { id } = useParams();
-  const movie = dummyMovies.find((movie) => movie.id === id);
-  const { creator, creator_email, title, image, summary, instructions } = movie;
+const MovieDetail = ({ data }) => {
+  const { productInfo } = data;
+
+  const { creator, creator_email, title, image, summary, instructions } =
+    productInfo;
 
   return (
     <div className={styles.container}>
