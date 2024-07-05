@@ -1,0 +1,9 @@
+.layout {
+  /* header size만큼 padding 주기*/
+  padding-top: 130px;
+}
+
+.main {
+  /* 뷰포트 높이에서 header size + footer size를 빼준다. */
+  min-height: calc(100vh - 230px);
+}
