@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from './SideNav.module.css';
 import Image from 'next/image';
-const SideNav = () => {
+const SideNav: React.FC = () => {
   return (
     <nav className={styles['navigation-bar']}>
       <Link href="/post" className={styles['link-box']}>

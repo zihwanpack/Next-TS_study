@@ -4,8 +4,9 @@ import Link from 'next/link';
 
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 import { useState } from 'react';
+import { ICarouselProps } from '@/types/types';
 
-const Carousel = ({ movieData }) => {
+const Carousel: React.FC<ICarouselProps> = ({ movieData }) => {
   const [index, setIndex] = useState(0);
   const moviesToShow = 4;
   const howMuchMove = 4;

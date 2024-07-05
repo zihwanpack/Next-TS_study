@@ -1,6 +1,9 @@
 import styles from './MovieDetail.module.css';
 import MovieDescription from '../MovieDescription/MovieDescription';
-const MovieDetail = ({ data }) => {
+
+import { IMovieDetailProps } from '@/types/types';
+
+const MovieDetail: React.FC<IMovieDetailProps> = ({ data }) => {
   const { productInfo } = data;
 
   const { creator, creator_email, title, image, summary, instructions } =

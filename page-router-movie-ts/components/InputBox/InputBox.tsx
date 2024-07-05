@@ -1,20 +1,21 @@
 import styles from './InputBox.module.css';
-import Input from '../Input/Input.js';
-import ImageUploader from '../ImageUploader/ImageUploader.js';
+import Input from '../Input/Input';
+import ImageUploader from '../ImageUploader/ImageUploader';
 
-import { useState } from 'react';
-const InputBox = () => {
-  const [id, setId] = useState('');
-  const [title, setTitle] = useState('');
-  const [image, setImage] = useState(null);
-  const [summary, setSummary] = useState('');
-  const [instructions, setInstructions] = useState('');
-  const [creator, setCreator] = useState('');
-  const [email, setEmail] = useState('');
+import { ChangeEvent, useState } from 'react';
+import { IMovieInfo } from '@/types/types';
+const InputBox: React.FC = () => {
+  const [id, setId] = useState<string>('');
+  const [title, setTitle] = useState<string>('');
+  const [image, setImage] = useState<string>('');
+  const [summary, setSummary] = useState<string>('');
+  const [instructions, setInstructions] = useState<string>('');
+  const [creator, setCreator] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    const newMovie = {
+    const newMovie: IMovieInfo = {
       id,
       title,
       image,
@@ -28,18 +29,43 @@ const InputBox = () => {
   return (
     <section className={styles.container}>
       <div className={styles['director-info']}>
-        <Input value={'creator'} onChange={(e) => setCreator(e.target.value)} />
-        <Input value={'email'} onChange={(e) => setEmail(e.target.value)} />
+        <Input
+          value={'creator'}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setCreator(e.target.value)
+          }
+        />
+        <Input
+          value={'email'}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setEmail(e.target.value)
+          }
+        />
       </div>
-      <Input value={'id'} onChange={(e) => setId(e.target.value)} />
-      <Input value={'title'} onChange={(e) => setTitle(e.target.value)} />
-      <Input value={'summary'} onChange={(e) => setSummary(e.target.value)} />
+      <Input
+        value={'id'}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setId(e.target.value)}
+      />
+      <Input
+        value={'title'}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setTitle(e.target.value)
+        }
+      />
+      <Input
+        value={'summary'}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setSummary(e.target.value)
+        }
+      />
       <Input
         value={'instructions'}
-        onChange={(e) => setInstructions(e.target.value)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setInstructions(e.target.value)
+        }
       />
       <div className={styles['button-box']}>
-        <ImageUploader onImageUpload={(image) => setImage(image)} />
+        <ImageUploader onImageUpload={(image: string) => setImage(image)} />
         <button onClick={submitHandler} className={styles['submit-button']}>
           제출하기
         </button>

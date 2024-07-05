@@ -1,6 +1,9 @@
 import styles from './MovieDescription.module.css';
 import Image from 'next/image';
-const MovieDescription = ({
+
+import { MovieDescriptionProps } from '@/types/types';
+
+const MovieDescription: React.FC<MovieDescriptionProps> = ({
   title,
   creator,
   creator_email,

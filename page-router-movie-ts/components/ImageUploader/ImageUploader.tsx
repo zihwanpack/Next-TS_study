@@ -1,19 +1,24 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef, ChangeEvent } from 'react';
+import { IImageUploaderProps } from '@/types/types';
+
 import styles from './ImageUploader.module.css';
 import Image from 'next/image';
-const ImageUploader = ({ onImageUpload }) => {
-  const [uploadedImage, setUploadedImage] = useState(null);
-  const imageInput = useRef();
 
-  const onChangeImage = (e) => {
-    const file = e.target.files[0];
-    const imageUrl = URL.createObjectURL(file);
-    setUploadedImage(imageUrl);
-    onImageUpload(file);
+const ImageUploader: React.FC<IImageUploaderProps> = ({ onImageUpload }) => {
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+  const imageInput = useRef<HTMLInputElement | null>(null);
+
+  const onChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setUploadedImage(imageUrl);
+      onImageUpload(JSON.stringify(file));
+    }
   };
 
   const onClickImageUpload = () => {
-    imageInput.current.click();
+    imageInput.current?.click();
   };
   return (
     <div>
@@ -40,6 +45,8 @@ const ImageUploader = ({ onImageUpload }) => {
             src={uploadedImage}
             alt="업로드된 이미지"
             className={styles['upload-image']}
+            width={200}
+            height={200}
           />
         </>
       )}

@@ -1,6 +1,9 @@
 import Container from '../../components/Container/Container';
 import MoviePost from '../../components/MoviePost/MoviePost';
-const PostPage = () => {
+
+import { NextPage } from 'next';
+
+const PostPage: NextPage = () => {
   return (
     <>
       <Container>
