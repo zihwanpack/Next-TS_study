@@ -1,13 +1,16 @@
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
-interface IMovieInfo {
-  id: string;
+interface IMovieBaseInfo {
   title: string;
   image: string | StaticImport;
   summary: string;
-  instructions: string;
   creator: string;
   creator_email: string;
+}
+
+interface IMovieInfo extends IMovieBaseInfo {
+  id: string;
+  instructions: string;
 }
 
 interface ICarouselProps {
@@ -25,13 +28,8 @@ interface IInputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-type TMovieDetailInfo = {
-  title: string;
-  image: string | StaticImport;
-  summary: string;
+type TMovieDetailInfo = IMovieBaseInfo & {
   instructions: string;
-  creator: string;
-  creator_email: string;
 };
 
 interface IProductIdProps {
@@ -44,13 +42,7 @@ interface IMovieDetailProps {
   };
 }
 
-interface MovieDescriptionProps {
-  title: string;
-  image: string | StaticImport;
-  summary: string;
-  creator: string;
-  creator_email: string;
-}
+type MovieDescriptionProps = IMovieBaseInfo;
 
 interface IImageUploaderProps {
   onImageUpload: (imageUrl: string) => void;
