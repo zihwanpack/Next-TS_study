@@ -1,13 +1,16 @@
 import styles from './Input.module.css';
+import classNames from 'classnames';
 
+const cx = classNames.bind(styles);
 const Input = ({ value, onChange }) => {
   const isCaution = value === '주의 사항';
-  const inputBoxClass = isCaution
-    ? styles['caution-input-box']
-    : styles['input-box'];
 
   return (
-    <div className={inputBoxClass}>
+    <div
+      className={cx(
+        isCaution ? styles['caution-input-box'] : styles['input-box']
+      )}
+    >
       <p>{`${value}:`}</p>
       <input
         type="text"
