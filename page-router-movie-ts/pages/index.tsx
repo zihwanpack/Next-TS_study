@@ -1,8 +1,8 @@
 // 여기가 메인 페이지 파일면 index
 
-import MovieList from '@/components/MovieList/MovieList';
 import Container from '@/components/Container/Container';
 import SideNav from '@/components/SideNav/SideNav';
+import MovieList from '@/components/MovieList/MovieList';
 
 import { NextPage } from 'next';
 
