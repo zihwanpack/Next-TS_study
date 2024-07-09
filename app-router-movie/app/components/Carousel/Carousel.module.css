@@ -18,13 +18,16 @@
   visibility: visible;
 }
 .carousel {
+  height: 100%;
+  width: 100%;
   display: flex;
   list-style-type: none;
+  justify-content: center;
 }
 .carousel-image {
-  height: 500px;
-  width: 400px;
-  margin: 0 10px;
+  height: 100%;
+  width: 100%;
+  padding: 0 10%;
   object-fit: contain;
 }
 

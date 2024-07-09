@@ -45,7 +45,10 @@ const Carousel: React.FC<ICarouselProps> = ({ movieData }) => {
           const { id, image, title } = movieData;
           return (
             <li key={id} className={styles.carousel}>
-              <Link href={`/products/${id}`}>
+              <Link
+                href={`/products/${id}`}
+                className={styles['carousel-image']}
+              >
                 <Image
                   src={image}
                   alt={`${title}의 포스터`}
