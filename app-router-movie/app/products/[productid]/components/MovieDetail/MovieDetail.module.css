@@ -1,0 +1,12 @@
+.container {
+  height: 100%;
+  width: 85%;
+  background-color: black;
+  color: white;
+  padding: 40px;
+}
+
+.movie-detail-instructions {
+  font-size: 1.3rem;
+  white-space: pre-line;
+}

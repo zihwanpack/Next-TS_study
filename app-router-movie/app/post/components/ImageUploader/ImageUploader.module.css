@@ -1,0 +1,20 @@
+.upload-input {
+  display: none;
+}
+
+.upload-button {
+  padding: 30px;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: 3px dashed #ff0558;
+  border-radius: 10px;
+  color: #ff0558;
+}
+
+.upload-image {
+  height: 80px;
+  width: 150px;
+  object-fit: contain;
+}

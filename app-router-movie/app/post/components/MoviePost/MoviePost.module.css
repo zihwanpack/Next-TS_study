@@ -1,0 +1,14 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: #ff0558;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.title {
+  font-size: 2rem;
+}
