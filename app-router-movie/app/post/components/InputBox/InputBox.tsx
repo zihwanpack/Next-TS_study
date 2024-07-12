@@ -1,10 +1,12 @@
 'use client'; // this is a client component
+
 import styles from './InputBox.module.css';
 import Input from '../Input/Input';
 import ImageUploader from '../ImageUploader/ImageUploader';
 
 import { ChangeEvent, useState } from 'react';
 import { IMovieInfo } from '@/types/types';
+
 const InputBox: React.FC = () => {
   const [id, setId] = useState<string>('');
   const [title, setTitle] = useState<string>('');

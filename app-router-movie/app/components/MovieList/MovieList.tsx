@@ -1,4 +1,5 @@
 'use client'; // this is a client component
+
 import { fetchMovies } from '@/api';
 import { useEffect, useState } from 'react';
 import { IMovieInfo } from '@/types/types';

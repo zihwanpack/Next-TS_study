@@ -41,6 +41,7 @@ type MovieDescriptionProps = IMovieBaseInfo;
 interface IImageUploaderProps {
   onImageUpload: (imageUrl: string) => void;
 }
+
 export type {
   IMovieInfo,
   ICarouselProps,
