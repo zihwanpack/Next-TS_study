@@ -144,9 +144,14 @@ ul {
 }
 
 .news-article img {
-  width: 7rem;
+  width: 10rem;
   margin-bottom: 1rem;
   border-radius: 4px;
+}
+
+.news-article p {
+  font-size: 1.3rem;
+  white-space: pre-line;
 }
 
 .modal {
@@ -199,7 +204,7 @@ ul {
 }
 
 .fullscreen-image img {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   object-fit: contain;
 }

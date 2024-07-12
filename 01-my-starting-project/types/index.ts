@@ -16,12 +16,6 @@ type TFilteredNewsPageProps = {
   };
 };
 
-type TMovieProps = {
-  params: {
-    filter: string[];
-  };
-};
-
 type TMovieListProps = {
   movies: TMovieData[];
 };

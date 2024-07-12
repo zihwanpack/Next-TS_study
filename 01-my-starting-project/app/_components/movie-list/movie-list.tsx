@@ -5,7 +5,7 @@ import { TMovieListProps } from '@/types';
 const MovieList: React.FC<TMovieListProps> = ({ movies }) => {
   return (
     // ul, li 써주자
-    <ul id="news-list">
+    <ul className="news-list">
       {movies.map((dummyMovies) => {
         return (
           <li key={dummyMovies.id}>

@@ -43,6 +43,7 @@ const Carousel: React.FC<ICarouselProps> = ({ movieData }) => {
         </button>
         {getVisibleMovies().map((movieData) => {
           const { id, image, title } = movieData;
+          const {} = movieData;
           return (
             <li key={id} className={styles.carousel}>
               <Link

@@ -31,7 +31,7 @@ export function getAvailableMoviesMonths(year: string) {
   }, []).sort((a, b) => b - a);
 }
 
-export function getMoviesForYear(year: string) {
+export function getMoviesForYear(year: string[]) {
   return DUMMY_MOVIES.filter(
     (news) => new Date(news.date).getFullYear() === +year
   );

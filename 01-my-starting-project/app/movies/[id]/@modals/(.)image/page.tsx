@@ -4,6 +4,7 @@ import { DUMMY_MOVIES } from '@/constants/dummy-movie';
 import { notFound, useRouter } from 'next/navigation';
 import { TInterceptImagePageProps } from '@/types';
 import { NextPage } from 'next';
+import Image from 'next/image';
 
 // 여기에 모달을 만든다.
 const InterceptImagePage: NextPage<TInterceptImagePageProps> = ({ params }) => {
@@ -19,9 +20,13 @@ const InterceptImagePage: NextPage<TInterceptImagePageProps> = ({ params }) => {
     <>
       <ModalBackdrop>
         <dialog className="modal" open>
-          <h2>응 나 가로채짐!</h2>
           <div className="fullscreen-image">
-            <img src={`${movieItem.image}`} alt={movieItem.title} />
+            <Image
+              src={movieItem.image}
+              alt={movieItem.title}
+              width={300}
+              height={300}
+            />
           </div>
         </dialog>
       </ModalBackdrop>

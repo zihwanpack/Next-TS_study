@@ -22,9 +22,10 @@ const MoviesDetailPage: NextPage<TMoviesDetailPage> = ({ params }) => {
           <Image
             src={`${moviesItem.image}`}
             alt={moviesItem.title}
-            width={200}
+            width={300}
             height={200}
-          ></Image>
+            className="customImage"
+          />
         </Link>
         <h1>{moviesItem.title}</h1>
         <time dateTime={moviesItem.date}>{moviesItem.date}</time>
