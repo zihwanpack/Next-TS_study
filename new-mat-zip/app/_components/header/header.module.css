@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.home-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  border: 0;
+  background-color: transparent;
+  cursor: grab;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  border: 0;
+  background-color: transparent;
+  cursor: grab;
+}
+
+.link {
+  text-decoration-line: none;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
