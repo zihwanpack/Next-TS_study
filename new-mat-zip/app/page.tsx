@@ -1,5 +1,4 @@
 import styles from './page.module.css';
-
 export default function HomePage() {
-  return <main className={styles.content}></main>;
+  return <div className={styles.container}>맛집을 골라보세요</div>;
 }
