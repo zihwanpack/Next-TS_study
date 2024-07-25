@@ -11,8 +11,8 @@ const fetchSignUp = async (
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: email,
-        password: password,
+        email,
+        password,
       }),
     });
     const result = res.ok;
@@ -24,8 +24,8 @@ const fetchSignUp = async (
 };
 
 const fetchLogin = async (
-  emailData: string,
-  passwordData: string
+  email: FormDataEntryValue | null,
+  password: FormDataEntryValue | null
 ): Promise<any> => {
   const res = await fetch(`${baseURL}/auth/signin`, {
     method: 'POST',
@@ -33,11 +33,12 @@ const fetchLogin = async (
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      email: emailData,
-      password: passwordData,
+      email,
+      password,
     }),
   });
   const result = await res.json();
+  console.log(result);
   return result;
 };
 

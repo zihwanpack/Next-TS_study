@@ -11,4 +11,18 @@ type TModalBackdropProps = {
   children: React.ReactNode;
 };
 
-export type { IFormValues, IInputProps, TModalBackdropProps };
+type TModalProps = {
+  data: string;
+};
+
+type TInputBox = {
+  title: string;
+  type: string;
+};
+export type {
+  IFormValues,
+  IInputProps,
+  TModalBackdropProps,
+  TModalProps,
+  TInputBox,
+};
