@@ -4,7 +4,7 @@ import InputBox from '../_components/input-box/input-box/input-box';
 const SignupPage: NextPage = async () => {
   return (
     <>
-      <InputBox title={'회원정보을 진행해주세요'} />
+      <InputBox title={'회원가입을 진행해주세요'} type={'signup'} />
     </>
   );
 };

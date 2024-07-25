@@ -1,8 +1,10 @@
+import { TFormInputType, ILoginResult, IFetchPostResult } from '@/types/index';
+
 const baseURL = 'http://localhost:3000';
 
 const fetchSignUp = async (
-  email: FormDataEntryValue | null,
-  password: FormDataEntryValue | null
+  email: TFormInputType,
+  password: TFormInputType
 ): Promise<boolean | null> => {
   try {
     const res = await fetch(`${baseURL}/auth/signup`, {
@@ -24,9 +26,9 @@ const fetchSignUp = async (
 };
 
 const fetchLogin = async (
-  email: FormDataEntryValue | null,
-  password: FormDataEntryValue | null
-): Promise<any> => {
+  email: TFormInputType,
+  password: TFormInputType
+): Promise<ILoginResult> => {
   const res = await fetch(`${baseURL}/auth/signin`, {
     method: 'POST',
     headers: {
@@ -38,8 +40,21 @@ const fetchLogin = async (
     }),
   });
   const result = await res.json();
-  console.log(result);
   return result;
 };
 
-export { fetchSignUp, fetchLogin };
+const fetchMyPost = async (page: string): Promise<IFetchPostResult> => {
+  const res = await fetch(`${baseURL}/auth/signin`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      page,
+    }),
+  });
+  const result = await res.json();
+  return result;
+};
+
+export { fetchSignUp, fetchLogin, fetchMyPost };

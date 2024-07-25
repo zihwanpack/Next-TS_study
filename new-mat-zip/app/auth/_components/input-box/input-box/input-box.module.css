@@ -1,6 +1,6 @@
 .container {
+  height: 80%;
   width: 100%;
-  /* height: 600px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +8,7 @@
   gap: 10px;
 }
 .description {
+  margin-top: 40px;
   display: flex;
   height: 100px;
   flex-direction: column;
@@ -24,7 +25,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15%;
+  padding: 9% 13%;
   border: medium dashed black;
   border-radius: 12px;
 }
@@ -36,7 +37,7 @@
 
 .button {
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 50px;
   padding: 10px;
   border: black medium dashed;
   border-radius: 10px;
