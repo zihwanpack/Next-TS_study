@@ -43,9 +43,9 @@ const fetchLogin = async (
   return result;
 };
 
-const fetchMyPost = async (page: string): Promise<IFetchPostResult> => {
-  const res = await fetch(`${baseURL}/auth/signin`, {
-    method: 'POST',
+const getMyPost = async (page: string): Promise<IFetchPostResult> => {
+  const res = await fetch(`${baseURL}/posts/my`, {
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -57,4 +57,4 @@ const fetchMyPost = async (page: string): Promise<IFetchPostResult> => {
   return result;
 };
 
-export { fetchSignUp, fetchLogin, fetchMyPost };
+export { fetchSignUp, fetchLogin, getMyPost };
