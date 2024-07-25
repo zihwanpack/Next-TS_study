@@ -1,18 +1,45 @@
-.box {
+.container {
   width: 100%;
+  /* height: 600px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 10px;
-  align-items: center;
+}
+.description {
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  gap: 20px;
+}
+.title {
+  font-size: 2.5rem;
 }
 
-.logo {
+.box {
+  height: 100px;
+  width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 15%;
+  border: medium dashed black;
+  border-radius: 12px;
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.title {
+.button {
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 10px;
+  border: black medium dashed;
+  border-radius: 10px;
+  background-color: transparent;
   font-size: 1.5rem;
 }

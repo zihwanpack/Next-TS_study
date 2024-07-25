@@ -1,18 +1,17 @@
 import styles from './input.module.css';
 import { IInputProps } from '@/types';
 
-const Input: React.FC<IInputProps> = ({ title, register }) => {
+const Input: React.FC<IInputProps> = ({ title }) => {
   return (
     <div className={styles.container}>
       <label htmlFor={`${title}-id`} className={styles['input-title']}>
         {title}
       </label>
       <input
-        {...register}
-        type={title === '비밀번호' ? 'password' : 'text'}
-        id={`${title}-id`}
+        type={title === 'password' ? 'password' : 'text'}
+        name={title}
         className={styles['input-style']}
-        autoComplete="off"
+        autoComplete={title === 'password' ? 'off' : 'on'}
       />
     </div>
   );

@@ -1,11 +1,9 @@
-import { ISignUpResponse } from '@/types';
-
 const baseURL = 'http://localhost:3000';
 
 const fetchSignUp = async (
-  email: string,
-  password: string
-): Promise<ISignUpResponse | null> => {
+  email: FormDataEntryValue | null,
+  password: FormDataEntryValue | null
+): Promise<boolean | null> => {
   try {
     const res = await fetch(`${baseURL}/auth/signup`, {
       method: 'POST',
@@ -17,7 +15,7 @@ const fetchSignUp = async (
         password: password,
       }),
     });
-    const result: ISignUpResponse = await res.json();
+    const result = res.ok;
     return result;
   } catch (err) {
     console.log(err);

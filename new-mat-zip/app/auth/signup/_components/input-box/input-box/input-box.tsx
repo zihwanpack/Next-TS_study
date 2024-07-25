@@ -1,63 +1,45 @@
-'use client';
-
-import React, { useState } from 'react';
 import styles from './input-box.module.css';
 import Input from '@/app/_components/input/input';
-import { IoFastFoodOutline } from 'react-icons/io5';
-import { Form, SubmitHandler, useForm } from 'react-hook-form';
+import { redirect } from 'next/navigation';
 import { fetchSignUp } from '@/api';
-import { IFormValues } from '@/types';
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
 
-const InputBox: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  // const { register, handleSubmit } = useForm<IFormValues>();
+const InputBox: React.FC = async () => {
+  const handleSubmit = async (formData: FormData) => {
+    'use server';
+    const email = formData.get('email');
+    const password = formData.get('password');
+    try {
+      const result = await fetchSignUp(email, password);
 
-  // const onSubmit: SubmitHandler<IFormValues> = async (data) => {
-  //   try {
-  //     const { email, password } = data;
-  //     const result = await fetchSignUp(email, password);
-  //     console.log(result);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  const router = useRouter();
-
-  const onSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    const response = await axios.post('http://localhost:3000/auth/signup', {
-      email,
-      password,
-    });
-    console.log(response);
+      if (result) {
+        console.log(result);
+        // redirect('/auth/signin');
+      } else {
+        console.log('회원가입 실패', result);
+      }
+    } catch (error) {
+      console.log('회원가입 중 오류 발생:', error);
+    }
   };
 
   return (
-    <form>
-      <div className={styles.box}>
-        <div className={styles.logo}>
-          <IoFastFoodOutline size={40} />
-          <p className={styles.title}>matzip</p>
-        </div>
-        <h1>회원가입을 진행해주세요.</h1>
-        <input
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <input
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-        <button onClick={onSubmit}>회원가입 하기</button>
-      </div>
-    </form>
+    <article className={styles.container}>
+      <section className={styles.description}>
+        <h1 className={styles.title}>계정을 생성합니다</h1>
+        <p>필요한 정보를 입력해주세요</p>
+      </section>
+      <section className={styles.box}>
+        <form action={handleSubmit}>
+          <div className={styles['input-box']}>
+            <Input title="email" />
+            <Input title="password" />
+          </div>
+          <button className={styles.button} type="submit">
+            가입하기
+          </button>
+        </form>
+      </section>
+    </article>
   );
 };
 

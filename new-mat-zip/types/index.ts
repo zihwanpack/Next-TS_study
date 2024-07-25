@@ -1,5 +1,3 @@
-import { UseFormRegister } from 'react-hook-form';
-
 interface IFormValues {
   email: string;
   password: string;
@@ -7,13 +5,10 @@ interface IFormValues {
 
 interface IInputProps {
   title: string;
-  register: ReturnType<UseFormRegister<IFormValues>>;
 }
 
-interface ISignUpResponse {
-  success: boolean;
-  message: string;
-  token: string;
-}
+type TModalBackdropProps = {
+  children: React.ReactNode;
+};
 
-export type { IFormValues, IInputProps, ISignUpResponse };
+export type { IFormValues, IInputProps, TModalBackdropProps };
