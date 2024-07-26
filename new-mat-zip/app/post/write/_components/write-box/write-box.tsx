@@ -10,9 +10,9 @@ const WriteBox: React.FC = () => {
     const data: IWritePostProps = {
       latitude: formData.get('latitude'),
       longitude: formData.get('longitude'),
-      color: formData.get('address'),
+      color: formData.get('color'),
       address: formData.get('address'),
-      title: formData.get('description'),
+      title: formData.get('title'),
       description: formData.get('description'),
       date: new Date().toISOString(),
       score: Number(formData.get('score')),

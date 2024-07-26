@@ -41,7 +41,7 @@ const PostBox: React.FC<{ data: IPostBoxProps[] }> = ({ data }) => {
                 <div className={styles.information}>
                   <span className={styles.post}>{address}</span>
                   <span className={styles.post}>{modifiedDate}</span>
-                  <span className={styles.post}>{score}</span>
+                  <span>{String.fromCodePoint(0x1f31f).repeat(score)}</span>
                 </div>
               </li>
             );
