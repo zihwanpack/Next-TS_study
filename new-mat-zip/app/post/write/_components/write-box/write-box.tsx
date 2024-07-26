@@ -42,7 +42,7 @@ const WriteBox: React.FC = () => {
         </div>
         <div className={styles['textarea-container']}>
           <label htmlFor="description" className={styles['textarea-label']}>
-            <p>내용</p>
+            <p>내용:</p>
             <textarea
               id="description"
               name="description"
