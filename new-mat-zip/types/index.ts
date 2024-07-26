@@ -37,15 +37,21 @@ interface IHeaderLink {
 }
 
 interface IFetchPostResult {
-  latitude: string;
-  longitude: string;
-  color: string;
-  address: string;
-  title: string;
-  description: string;
-  date: string;
-  score: number;
-  imageUris: string;
+  latitude: TFormInputType;
+  longitude: TFormInputType;
+  color: TFormInputType;
+  address: TFormInputType;
+  title: TFormInputType;
+  description: TFormInputType;
+  date: TFormInputType;
+  score: number | null;
+  imageUris: TFormInputType[] | null;
+}
+
+interface ILabelInputProps {
+  label: string;
+  name: string;
+  placeholder: string;
 }
 
 export type {
@@ -59,4 +65,5 @@ export type {
   TAuthResult,
   ILoginResult,
   IFetchPostResult,
+  ILabelInputProps,
 };

@@ -1,11 +1,12 @@
 import styles from './input-box.module.css';
 import Input from '@/app/_components/input/input';
+
 import { redirect } from 'next/navigation';
 import { fetchSignUp, fetchLogin } from '@/api';
 import { IInputBoxProps, TAuthResult } from '@/types/index';
 import { cookies } from 'next/headers';
 
-const InputBox: React.FC<IInputBoxProps> = async ({ title, type }) => {
+const InputBox: React.FC<IInputBoxProps> = ({ title, type }) => {
   const handleSubmit = async (formData: FormData) => {
     'use server';
     const email = formData.get('email');

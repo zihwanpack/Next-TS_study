@@ -36,6 +36,9 @@ const Header: React.FC = () => {
               </Link>
             )
         )}
+        <button className={styles.button}>
+          <p className={styles['login-text']}>로그아웃</p>
+        </button>
       </div>
     </header>
   );
