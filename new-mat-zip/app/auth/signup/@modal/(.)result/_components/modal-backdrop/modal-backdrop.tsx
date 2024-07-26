@@ -1,8 +1,8 @@
 import { useRouter } from 'next/navigation';
-import { TModalBackdropProps } from '@/types/index';
+import { IModalBackdropProps } from '@/types/index';
 import styles from './modal-backdrop.module.css';
 
-const ModalBackdrop: React.FC<TModalBackdropProps> = ({ children }) => {
+const ModalBackdrop: React.FC<IModalBackdropProps> = ({ children }) => {
   const router = useRouter();
 
   return (

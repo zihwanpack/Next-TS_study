@@ -1,20 +1,36 @@
+'use client';
+
 import React from 'react';
 import styles from './header.module.css';
 import { IoFastFoodOutline } from 'react-icons/io5';
 import Link from 'next/link';
-import { cookies } from 'next/headers';
 import { IHeaderLink } from '@/types';
 
+import { useCookies } from 'next-client-cookies';
+import { fetchLogout } from '@/api/index';
+
 const Header: React.FC = () => {
-  const cookieStore = cookies();
-  const myAccessCookie = cookieStore.get('myAccessCookie');
+  const cookieStore = useCookies();
+  const myRefreshCookie = cookieStore.get('myRefreshCookie');
+
+  const handleLogout = async () => {
+    try {
+      const result = await fetchLogout();
+      console.log(myRefreshCookie);
+      if (result && myRefreshCookie !== undefined) {
+        cookieStore.remove('myRefreshCookie');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const links: IHeaderLink[] = [
-    { href: '/auth/signup', text: '회원가입', isVisible: !myAccessCookie },
-    { href: '/auth/signin', text: '로그인', isVisible: !myAccessCookie },
-    { href: '/post', text: '게시글', isVisible: myAccessCookie },
-    { href: '/my', text: '마이페이지', isVisible: myAccessCookie },
-    { href: '/favorite', text: '즐겨찾기', isVisible: myAccessCookie },
+    { href: '/auth/signup', text: '회원가입', isVisible: !myRefreshCookie },
+    { href: '/auth/signin', text: '로그인', isVisible: !myRefreshCookie },
+    { href: '/post', text: '게시글', isVisible: myRefreshCookie },
+    { href: '/my', text: '마이페이지', isVisible: myRefreshCookie },
+    { href: '/favorite', text: '즐겨찾기', isVisible: myRefreshCookie },
   ];
 
   return (
@@ -36,9 +52,11 @@ const Header: React.FC = () => {
               </Link>
             )
         )}
-        <button className={styles.button}>
-          <p className={styles['login-text']}>로그아웃</p>
-        </button>
+        {myRefreshCookie && (
+          <button className={styles.button} onClick={handleLogout}>
+            <p className={styles['login-text']}>로그아웃</p>
+          </button>
+        )}
       </div>
     </header>
   );

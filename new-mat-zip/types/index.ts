@@ -1,5 +1,3 @@
-import { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies';
-
 type TFormInputType = FormDataEntryValue | null;
 
 interface IFormValues {
@@ -33,7 +31,7 @@ type TAuthResult = null | boolean | ILoginResult;
 interface IHeaderLink {
   href: string;
   text: string;
-  isVisible: RequestCookie | boolean | undefined;
+  isVisible: string | undefined | boolean;
 }
 
 interface IFetchPostResult {

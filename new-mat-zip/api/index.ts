@@ -1,3 +1,5 @@
+'use server';
+
 import { cookies } from 'next/headers';
 
 import { TFormInputType, ILoginResult, IFetchPostResult } from '@/types/index';
@@ -52,10 +54,17 @@ const fetchLogin = async (
 };
 
 const getMyPost = async (page: string): Promise<IFetchPostResult> => {
+  const myRefreshCookie = cookies().get('myRefreshCookie')?.value;
+
+  if (!myRefreshCookie) {
+    throw new Error('쿠키가 없다!');
+  }
+
   try {
     const res = await fetch(`${baseURL}/posts/my`, {
       method: 'GET',
       headers: {
+        Authorization: `Bearer ${myRefreshCookie}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -86,14 +95,14 @@ const createMyPost = async (data: IFetchPostResult) => {
   const myRefreshCookie = cookies().get('myRefreshCookie')?.value;
 
   if (!myRefreshCookie) {
-    throw new Error('쿠기가 없다!');
+    throw new Error('쿠키가 없다!');
   }
 
   try {
     const res = await fetch(`${baseURL}/posts`, {
       method: 'POST',
       headers: {
-        Authorization: myRefreshCookie,
+        Authorization: `Bearer ${myRefreshCookie}`,
         'Content-Type': 'application/json',
       },
 
@@ -116,16 +125,28 @@ const createMyPost = async (data: IFetchPostResult) => {
     throw err;
   }
 };
+
 const fetchLogout = async () => {
+  const requestHeaders = new Headers();
+  const myRefreshCookie = cookies().get('myRefreshCookie')?.value;
+  if (!myRefreshCookie) {
+    console.log('myRefreshCookie가 없다');
+    return;
+  }
+
+  requestHeaders.set('Authorization', myRefreshCookie);
+
   try {
     const res = await fetch(`${baseURL}/auth/logout`, {
       method: 'POST',
       headers: {
+        Authorization: `Bearer ${myRefreshCookie}`,
         'Content-Type': 'application/json',
       },
     });
 
-    return await res.json();
+    const result = res.ok;
+    return result;
   } catch (err) {
     console.log('Logout error:', err);
     throw err;
