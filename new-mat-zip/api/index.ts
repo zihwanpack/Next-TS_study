@@ -2,7 +2,12 @@
 
 import { cookies } from 'next/headers';
 
-import { TFormInputType, ILoginResult, IFetchPostResult } from '@/types/index';
+import {
+  TFormInputType,
+  ILoginResult,
+  IWritePostProps,
+  IPostBoxProps,
+} from '@/types/index';
 import { error } from 'console';
 
 const baseURL = 'http://localhost:3000';
@@ -53,7 +58,7 @@ const fetchLogin = async (
   }
 };
 
-const getMyPost = async (page: string): Promise<IFetchPostResult> => {
+const getMyPost = async (page: string): Promise<IPostBoxProps[]> => {
   const myRefreshCookie = cookies().get('myRefreshCookie')?.value;
 
   if (!myRefreshCookie) {
@@ -61,15 +66,12 @@ const getMyPost = async (page: string): Promise<IFetchPostResult> => {
   }
 
   try {
-    const res = await fetch(`${baseURL}/posts/my`, {
+    const res = await fetch(`${baseURL}/posts/my?page=${page}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${myRefreshCookie}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        page,
-      }),
     });
     const result = await res.json();
     return result;
@@ -79,7 +81,7 @@ const getMyPost = async (page: string): Promise<IFetchPostResult> => {
   }
 };
 
-const createMyPost = async (data: IFetchPostResult) => {
+const createMyPost = async (data: IWritePostProps) => {
   const {
     latitude,
     longitude,

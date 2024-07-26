@@ -34,7 +34,7 @@ interface IHeaderLink {
   isVisible: string | undefined | boolean;
 }
 
-interface IFetchPostResult {
+interface IWritePostProps {
   latitude: TFormInputType;
   longitude: TFormInputType;
   color: TFormInputType;
@@ -52,6 +52,26 @@ interface ILabelInputProps {
   placeholder: string;
 }
 
+interface IPostPageProps {
+  params: { page: string };
+}
+
+interface IPostBoxProps {
+  id: number;
+  latitude: number;
+  longitude: number;
+  color: string;
+  address: string;
+  title: string;
+  description: string;
+  date: string;
+  score: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string | null;
+  images: string[];
+}
+
 export type {
   TFormInputType,
   IFormValues,
@@ -62,6 +82,8 @@ export type {
   IInputBoxProps,
   TAuthResult,
   ILoginResult,
-  IFetchPostResult,
+  IWritePostProps,
   ILabelInputProps,
+  IPostPageProps,
+  IPostBoxProps,
 };

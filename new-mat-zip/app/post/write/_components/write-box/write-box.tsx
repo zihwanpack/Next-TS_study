@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './write-box.module.css';
 import { createMyPost } from '@/api/index';
-import { IFetchPostResult } from '@/types/index';
+import { IWritePostProps } from '@/types/index';
 import LabelInput from '../label-input/label-input';
 
 const WriteBox: React.FC = () => {
   const handleSubmit = async (formData: FormData) => {
     'use server';
-    const data: IFetchPostResult = {
+    const data: IWritePostProps = {
       latitude: formData.get('latitude'),
       longitude: formData.get('longitude'),
       color: formData.get('address'),
