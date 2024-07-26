@@ -58,7 +58,7 @@ const fetchLogin = async (
   }
 };
 
-const getMyPost = async (page: string): Promise<IPostBoxProps[]> => {
+const getMyPost = async (page: number): Promise<IPostBoxProps[]> => {
   const myRefreshCookie = cookies().get('myRefreshCookie')?.value;
 
   if (!myRefreshCookie) {
@@ -155,4 +155,34 @@ const fetchLogout = async () => {
   }
 };
 
-export { fetchSignUp, fetchLogin, createMyPost, getMyPost, fetchLogout };
+const getDetailPost = async (id: number): Promise<IPostBoxProps> => {
+  const myRefreshCookie = cookies().get('myRefreshCookie')?.value;
+
+  if (!myRefreshCookie) {
+    throw new Error('쿠키가 없다!');
+  }
+
+  try {
+    const res = await fetch(`${baseURL}/posts/my?page=${id}`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${myRefreshCookie}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    const result = await res.json();
+    return result;
+  } catch (err) {
+    console.log(err);
+    throw error;
+  }
+};
+
+export {
+  fetchSignUp,
+  fetchLogin,
+  createMyPost,
+  getMyPost,
+  fetchLogout,
+  getDetailPost,
+};

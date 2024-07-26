@@ -53,7 +53,11 @@ interface ILabelInputProps {
 }
 
 interface IPostPageProps {
-  params: { page: string };
+  params: { page: number };
+}
+
+interface IPagingBarProps {
+  length: number;
 }
 
 interface IPostBoxProps {
@@ -72,6 +76,10 @@ interface IPostBoxProps {
   images: string[];
 }
 
+interface IDetailPageProps {
+  params: { id: number };
+}
+
 export type {
   TFormInputType,
   IFormValues,
@@ -86,4 +94,6 @@ export type {
   ILabelInputProps,
   IPostPageProps,
   IPostBoxProps,
+  IPagingBarProps,
+  IDetailPageProps,
 };

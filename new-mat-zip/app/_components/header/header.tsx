@@ -16,7 +16,6 @@ const Header: React.FC = () => {
   const handleLogout = async () => {
     try {
       const result = await fetchLogout();
-      console.log(myRefreshCookie);
       if (result && myRefreshCookie !== undefined) {
         cookieStore.remove('myRefreshCookie');
       }
@@ -28,7 +27,7 @@ const Header: React.FC = () => {
   const links: IHeaderLink[] = [
     { href: '/auth/signup', text: '회원가입', isVisible: !myRefreshCookie },
     { href: '/auth/signin', text: '로그인', isVisible: !myRefreshCookie },
-    { href: '/post', text: '게시글', isVisible: myRefreshCookie },
+    { href: '/post/1', text: '게시글', isVisible: myRefreshCookie },
     { href: '/my', text: '마이페이지', isVisible: myRefreshCookie },
     { href: '/favorite', text: '즐겨찾기', isVisible: myRefreshCookie },
   ];
